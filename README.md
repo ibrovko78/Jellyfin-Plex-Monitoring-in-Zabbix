@@ -80,4 +80,4 @@ else:
 * Скачать скрипт для Plex, и поместить его в /usr/local/bin/ plex_active_sessions_count.sh
 * chmod +x /usr/local/bin/ plex_active_sessions_count.sh
 * В скрипте замените "ваш Plex Token" на Plex Token, замените "http://localhost:32400" на ваш IP c Plex
-* Создайте свой шаблон zabbix или скачайте шаблон по ссылке ![скачать шаблон](script/jellyfin and Plex.yaml)
+* Создайте свой шаблон zabbix или скачайте шаблон по ссылке ![скачать шаблон](script/jellyfin_and_Plex.yaml)
