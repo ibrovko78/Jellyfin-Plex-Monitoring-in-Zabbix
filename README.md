@@ -76,6 +76,6 @@ else:
 * Plex Token будет выведен в консоль
 ---
 * Установить xmllint
-* GitHub не позволяет разместить команды скрипта, скачайте его по ссылке 
+* GitHub не позволяет разместить команды скрипта, скачайте его по ссылке ![ссылка на скрипт](script/plex_active_sessions_count.rar)
 * Скачать скрипт для Plex, и поместить его в /usr/local/bin/ plex_active_sessions_count.sh
-* Замените "ваш Plex Token" на ваш Plex Token, замените "http://localhost:32400" на ваш IP c Plex
+* В скрипте замените "ваш Plex Token" на ваш Plex Token, замените "http://localhost:32400" на ваш IP c Plex
