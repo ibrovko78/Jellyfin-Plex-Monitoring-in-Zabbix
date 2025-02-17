@@ -75,5 +75,6 @@ else:
 * Запустить скрипт Python, python3 /usr/local/bin/get_plex_token.py
 * Plex Token будет выведен в консоль
 ---
+* Установить xmllint
 * Создать скрипт для Plex, nano /usr/local/bin/ plex_active_sessions_count.sh
 * Наполнить файл содержимым, замените "ваш Plex Token" на ваш Plex Token, замените "http://localhost:32400" на ваш IP c Plex
