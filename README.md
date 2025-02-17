@@ -17,7 +17,8 @@ UserParameter=p_active_sessions_count, /usr/local/bin/./plex_active_sessions_cou
 * Скопировать API ключ, далее его необходимо вставить в скрипт для Jellyfin
 
 ### 4. Создать скрипты
-* Создадим скрипт для Jellyfin, nano /usr/local/bin/jellyfin_active_sessions_count.sh
+#### Создадим скрипт для Jellyfin
+* nano /usr/local/bin/jellyfin_active_sessions_count.sh
 * Наполним файл содержимым, замените localhost:8096 на ваш IP с jellyfin, вставьте ваш API_KEY=
 ```js
 #!/bin/bash
@@ -35,5 +36,41 @@ ACTIVE_COUNT=$(echo "$ACTIVE_SESSIONS" | jq -r '[.[] | select(.NowPlayingItem)] 
 # Display the total count of active playback sessions
 echo "$ACTIVE_COUNT"
 ```
-* chmod +x /usr/local/bin/jellyfin_active_sessions_count.sh
-* 
+* chmod 770 +x /usr/local/bin/jellyfin_active_sessions_count.sh
+* chown zabbix:zabbix /usr/local/bin/jellyfin_active_sessions_count.sh
+#### Создадим скрипт для Plex
+* Для начала необходимо получить Plex Token
+* Вам потребуется аккаунт Plex, хватит даже акаунта без PlexPass
+* Создайте аккаунт Plex если у вас его нет
+* Воидите на сервере с Plex media server в аккаунт
+* Установите Python
+* Создать скрипт python, nano /usr/local/bin/get_plex_token.py
+* Наполните файл содержимым, замените "username" и "password" на вашии учетные данные аккаунта Plex
+```js
+import requests
+
+# Plex credentials
+PLEX_USERNAME = "username"
+PLEX_PASSWORD = "password"
+
+# Authenticate and get token
+auth_url = "https://plex.tv/users/sign_in.json"
+headers = {
+    "X-Plex-Client-Identifier": "YourClientIdentifier",
+    "X-Plex-Product": "YourProductName",
+    "X-Plex-Version": "1.0"
+}
+data = {
+    "user[login]": PLEX_USERNAME,
+    "user[password]": PLEX_PASSWORD
+}
+
+response = requests.post(auth_url, headers=headers, data=data)
+if response.status_code == 201:
+    print("Plex Token:", response.json()["user"]["authToken"])
+else:
+    print("Failed to retrieve token. Check your credentials.")
+```
+* Запустить скрипт Python, python3 /usr/local/bin/get_plex_token.py
+* Plex Token будет выведен в консоль
+---
