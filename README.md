@@ -38,11 +38,12 @@ echo "$ACTIVE_COUNT"
 ```
 * chmod 770 +x /usr/local/bin/jellyfin_active_sessions_count.sh
 * chown zabbix:zabbix /usr/local/bin/jellyfin_active_sessions_count.sh
+
 #### Создадим скрипт для Plex
 * Для начала необходимо получить Plex Token
 * Вам потребуется аккаунт Plex, хватит даже акаунта без PlexPass
 * Создайте аккаунт Plex если у вас его нет
-* Воидите на сервере с Plex media server в аккаунт
+* Войдите на сервере с Plex media server в аккаунт Plex
 * Установите Python
 * Создать скрипт python, nano /usr/local/bin/get_plex_token.py
 * Наполните файл содержимым, замените "username" и "password" на вашии учетные данные аккаунта Plex
@@ -74,3 +75,5 @@ else:
 * Запустить скрипт Python, python3 /usr/local/bin/get_plex_token.py
 * Plex Token будет выведен в консоль
 ---
+* Создать скрипт для Plex, nano /usr/local/bin/ plex_active_sessions_count.sh
+* Наполнить файл содержимым, замените "ваш Plex Token" на ваш Plex Token, замените "http://172.23.1.100:32400" на ваш IP c Plex
