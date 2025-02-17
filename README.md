@@ -3,7 +3,7 @@
 ## Jellyfin & Plex Active playback session monitoring in Zabbix
 
 ### 1. Установить zabbix-agent2, если у вас установлен zabbix-agent то замените его на zabbix-agent2
-* Zabbix-agent2 может быть установлен на любом хосте, для удобства установим его на сервере где работает Jellyfin
+* Zabbix-agent2 может быть установлен на любом хосте, для удобства установим его на сервере где работает Jellyfin и Plex
 ### 2. Отредактируйте файл конфигурации zabbix-agent2, nano /etc/zabbix/zabbix_agent2.conf
 * В конец файла конфигурации добавить UserParameter для запуска скриптов
 ```js
