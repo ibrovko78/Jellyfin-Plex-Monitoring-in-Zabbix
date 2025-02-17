@@ -76,4 +76,4 @@ else:
 * Plex Token будет выведен в консоль
 ---
 * Создать скрипт для Plex, nano /usr/local/bin/ plex_active_sessions_count.sh
-* Наполнить файл содержимым, замените "ваш Plex Token" на ваш Plex Token, замените "http://172.23.1.100:32400" на ваш IP c Plex
+* Наполнить файл содержимым, замените "ваш Plex Token" на ваш Plex Token, замените "http://localhost:32400" на ваш IP c Plex
