@@ -1,2 +1,2 @@
 # Jellyfin-Plex-Monitoring-in-Zabbix
-Active playback session monitoring in jellyfin &amp; plex
+Active playback session monitoring in Jellyfin & Plex
