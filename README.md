@@ -17,6 +17,7 @@ UserParameter=p_active_sessions_count, /usr/local/bin/./plex_active_sessions_cou
 * Скопировать API ключ, далее его необходимо вставить в скрипт для Jellyfin
 
 ### 4. Создать скрипты
+* Установить jq
 #### Создадим скрипт для Jellyfin
 * nano /usr/local/bin/jellyfin_active_sessions_count.sh
 * Наполним файл содержимым, замените localhost:8096 на ваш IP с jellyfin, вставьте ваш API_KEY=
